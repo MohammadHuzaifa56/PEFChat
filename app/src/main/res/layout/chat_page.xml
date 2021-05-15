@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.ConversationsFragment">
+
+
+ <include
+     android:id="@+id/include"
+     layout="@layout/toolbar_home" />
+
+ <com.github.florent37.shapeofview.shapes.RoundRectView
+     android:id="@+id/roundRectView"
+     android:layout_width="match_parent"
+     android:layout_height="160dp"
+     app:shape_roundRect_bottomRightRadius="20dp"
+     app:shape_roundRect_bottomLeftRadius="20dp"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toBottomOf="@+id/include">
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="#E9E9E9">
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/recLin"
+          android:layout_margin="10dp"
+          android:orientation="horizontal">
+          <androidx.recyclerview.widget.RecyclerView
+              android:layout_width="wrap_content"
+              android:layout_marginStart="15dp"
+              android:id="@+id/friendRecycler"
+              android:orientation="horizontal"
+              android:layout_height="wrap_content"/>
+      </LinearLayout>
+      <com.github.florent37.shapeofview.shapes.RoundRectView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="20dp"
+          android:layout_marginTop="10dp"
+          app:shape_roundRect_topRightRadius="12dp"
+          app:shape_roundRect_topLeftRadius="12dp"
+          app:shape_roundRect_bottomLeftRadius="12dp"
+          app:shape_roundRect_bottomRightRadius="12dp"
+          android:layout_below="@+id/recLin"
+          android:layout_marginEnd="20dp"
+          android:layout_alignParentBottom="true"
+          android:layout_marginBottom="20dp">
+          <EditText
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:drawableStart="@drawable/ic_srch"
+              android:background="#fff"
+              android:id="@+id/srchConv"
+              android:drawableTint="#8A8888"
+              android:fontFamily="@font/adventr"
+              style="@style/TextInputEditTextStyle"
+              android:drawablePadding="20dp"
+              android:hint="Search"/>
+      </com.github.florent37.shapeofview.shapes.RoundRectView>
+  </RelativeLayout>
+ </com.github.florent37.shapeofview.shapes.RoundRectView>
+    <LinearLayout
+        android:id="@+id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="105dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/roundRectView"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/empty_state_size"
+                    android:layout_height="@dimen/empty_state_size"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/ic_empty" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/NoMessages"
+                    android:textColor="@color/colorGray2"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/swipeConversations"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/roundRectView">
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="10dp"
+            android:id="@+id/ConversationsList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fabAddGroup"
+        android:src="@drawable/ic_add_white_24dp"
+        android:layout_gravity="end|bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="20dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

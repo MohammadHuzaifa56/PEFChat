@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+   <!-- <include
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="5dp"
+        layout="@layout/toolbar_home"/>-->
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar"
+        android:visibility="gone"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_horizontal_ntb"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_height="match_parent"
+        android:layout_above="@id/meowBar"/>
+
+
+    <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mbn_circleColor="#ffffff"
+        android:id="@+id/meowBar"
+        android:layout_alignParentBottom="true"
+        app:mbn_backgroundBottomColor="#ffffff"
+        app:mbn_countBackgroundColor="#ff6f00"
+        app:mbn_countTextColor="#ffffff"
+        app:mbn_defaultIconColor="#90a4ae"
+        app:mbn_rippleColor="#2f424242"
+        app:mbn_selectedIconColor="@color/colorPrimary"
+        app:mbn_shadowColor="#1f212121"/>
+ <!--   <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+
+        &lt;!&ndash;  <devlight.io.library.ntb.NavigationTabBar
+              android:id="@+id/ntb_horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="50dp"
+              app:ntb_badge_gravity="top"
+              app:ntb_badge_position="center"
+              app:ntb_badged="false"
+              app:ntb_scaled="true"
+              app:ntb_tinted="true"
+              app:ntb_title_mode="all"
+              app:ntb_active_color="@color/theme_green"
+              app:ntb_inactive_color="@color/gray_icon"
+              app:ntb_bg_color="@color/off_white"
+              app:ntb_titled="true"
+              app:ntb_swiped="true"/>&ndash;&gt;
+    </LinearLayout>-->
+
+</RelativeLayout>

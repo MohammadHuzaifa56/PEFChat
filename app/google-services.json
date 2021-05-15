@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "150038002072",
+    "project_id": "mychatpef",
+    "storage_bucket": "mychatpef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:150038002072:android:d231a9730c7ceb634d93ed",
+        "android_client_info": {
+          "package_name": "com.pefgloble.pefchate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "150038002072-i5enoubgcb907lopb4m6cfsuhj9e8b95.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pefgloble.pefchate",
+            "certificate_hash": "21afd60c9f96b5ae574a8a4e909f493582352c31"
+          }
+        },
+        {
+          "client_id": "150038002072-g54aoj7b543agnimii33ll6hft6uu70j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAX0aesD9ICFP0iGtCm2N9WYLX-DMo2zVg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "150038002072-g54aoj7b543agnimii33ll6hft6uu70j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

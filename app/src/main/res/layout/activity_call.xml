@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    tools:context=".AgoraVideo.openvcall.ui.CallActivity">
+
+    <com.pefgloble.pefchate.AgoraVideo.openvcall.ui.layout.GridVideoViewContainer
+        android:id="@+id/grid_video_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ViewStub
+        android:id="@id/small_video_view_dock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:inflatedId="@id/small_video_view_dock"
+        android:layout="@layout/small_video_view_dock" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.pefgloble.pefchate.AgoraVideo.propeller.ui.AGLinearLayout
+            android:id="@+id/extra_ops_container"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+           app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:onClick="onSwitchCameraClicked"
+                android:scaleType="center"
+                android:src="@drawable/btn_switch_camera_white" />
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:onClick="onMixingAudioClicked"
+                android:scaleType="center"
+                android:src="@drawable/btn_audio_mixing_off" />
+
+        </com.pefgloble.pefchate.AgoraVideo.propeller.ui.AGLinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/msg_list"
+            android:layout_width="272dp"
+            android:layout_height="144dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/agoraFragment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

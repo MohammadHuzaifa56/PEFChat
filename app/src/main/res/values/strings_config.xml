@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- PLEASE KEEP THIS App ID IN SAFE PLACE -->
+    <!-- Get your own App ID at https://dashboard.agora.io/ -->
+    <!-- After you entered the App ID, remove <##> outside of Your App ID -->
+    <!-- For formal released project, please use Security Keys/Token
+        https://docs.agora.io/en/Video/token?platform=All%20Platforms -->
+    <string name="agora_app_id" tools:ignore="MissingTranslation">a057176f17774df3b4a1dfc382dd7fb0</string>
+    <!-- Please leave it if not enable App Certificate -->
+    <!-- You can generate a temporary token at https://dashboard.agora.io/projects -->
+
+    <string-array name="encryption_mode_values" tools:ignore="ExtraTranslation">
+        <item>AES-128-XTS</item>
+        <item>AES-256-XTS</item>
+    </string-array>
+
+    <string-array
+        name="string_array_resolutions" tools:ignore="ExtraTranslation">
+        <item>160x120</item> // 120P
+        <item>320x180</item> // 180P
+        <item>320x240</item> // 240P the default one
+        <item>640x360</item> // 360P
+        <item>640x480</item> // 480P
+        <item>1280x720</item> // 720P
+    </string-array>
+
+    <string-array
+        name="string_array_frame_rate" tools:ignore="ExtraTranslation">
+        <item>1</item>
+        <item>7</item>
+        <item>10</item>
+        <item>15</item> // the default one
+        <item>24</item>
+        <item>30</item>
+    </string-array>
+
+    <string name="legal_channel_name_characters" tools:ignore="ExtraTranslation,MissingTranslation">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#$%&amp;()+,-:;&lt;=.>?@[]^_`{|}~</string>
+
+</resources>

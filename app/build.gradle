@@ -1,0 +1,212 @@
+plugins {
+    id 'com.android.application'
+}
+
+apply plugin: 'realm-android'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion '29.0.2'
+    dataBinding {
+        enabled = true
+    }
+
+    defaultConfig {
+        applicationId "com.pefgloble.pefchate"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        lintOptions{
+            abortOnError false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    sourceSets {
+        main{
+            jniLibs.srcDirs = ['src/main/jniLibs']
+        }
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.camera:camera-camera2:1.1.0-alpha01'
+    implementation 'androidx.emoji:emoji:1.1.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'androidx.palette:palette:1.0.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //firebase libraries
+    implementation 'com.google.firebase:firebase-core:18.0.2'
+    implementation 'com.google.firebase:firebase-auth:20.0.2'
+    implementation 'androidx.browser:browser:1.3.0'
+    implementation platform('com.google.firebase:firebase-bom:26.5.0')
+  //  implementation 'com.google.firebase:firebase-analytics'
+
+    //HttpLoggingInterceptor
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.0"
+
+    //RxJava2
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.0'
+
+    //facebook account kit
+   // implementation 'com.facebook.android:account-kit-sdk:5.+'
+
+    //pin view for otp
+    implementation 'com.chaos.view:pinview:1.4.4'
+
+    //Country code picker
+    implementation 'com.github.joielechong:countrycodepicker:2.4.2'
+
+    //Circular image view
+
+    implementation 'com.mikhaellopez:circularimageview:4.2.0'
+    //bottom bar
+    //implementation 'devlight.io:navigationtabbar:1.2.5'
+
+    //Glide for images
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+
+    implementation 'com.google.android.gms:play-services-location:18.0.0'
+
+    def camerax_version = "1.0.0-rc02"
+    // The following line is optional, as the core library is included indirectly by camera-camera2
+    implementation "androidx.camera:camera-core:${camerax_version}"
+    implementation "androidx.camera:camera-camera2:${camerax_version}"
+    // If you want to additionally use the CameraX Lifecycle library
+    implementation "androidx.camera:camera-lifecycle:${camerax_version}"
+    // If you want to additionally use the CameraX View class
+    implementation "androidx.camera:camera-view:1.0.0-alpha21"
+    // If you want to additionally use the CameraX Extensions library
+    implementation "androidx.camera:camera-extensions:1.0.0-alpha21"
+
+    implementation 'com.vanniktech:emoji-google:0.7.0'
+
+   // implementation 'com.google.firebase:firebase-firestore:21.4.3'
+   // implementation 'com.google.firebase:firebase-storage:19.1.1'
+
+    implementation 'im.ene.toro3:toro:3.6.2.2804'
+    implementation 'im.ene.toro3:toro-ext-exoplayer:3.6.2.2804'
+
+    //Rest APIs
+    //Retrofit2 implementation
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    //OKHTTP for looking timeout
+    implementation 'com.squareup.okhttp3:okhttp:3.14.9'
+
+    //CircleImage
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //volley implementation
+    implementation 'com.android.volley:volley:1.1.1'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    //filters
+    implementation 'info.androidhive:imagefilters:1.0.7'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.6'
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    //Work
+    implementation "androidx.work:work-runtime:2.5.0"
+
+    //EventBus
+    implementation 'org.greenrobot:eventbus:3.2.0'
+
+    //DateTime
+    implementation 'net.danlew:android.joda:2.10.9.1'
+
+    //ShortCutBadger
+    implementation "me.leolin:ShortcutBadger:1.1.22@aar"
+
+    //ButterKnife
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+
+    //Emojis
+    implementation 'com.vanniktech:emoji-material:0.7.0'
+
+    //shapeofview
+    implementation 'com.github.florent37:shapeofview:1.4.7'
+
+    //socket.io
+    implementation ('io.socket:socket.io-client:1.0.0') {
+        exclude group: 'org.json', module: 'json'
+    }
+
+    //RxJava2
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.7.1'
+
+    //Firebase Ui
+   // implementation 'com.firebaseui:firebase-ui-firestore:7.1.1'
+
+    //exoPlayer
+    implementation 'com.google.android.exoplayer:exoplayer:2.13.2'
+
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.13.2'
+    implementation 'com.google.android.exoplayer:exoplayer-dash:2.13.2'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.13.2'
+
+    //HttpProxyCache
+    compile 'com.danikula:videocache:2.7.1'
+
+    implementation "com.airbnb.android:lottie:3.7.0"
+
+   //audio
+    implementation 'com.github.alxrm:audiowave-progressbar:0.9.2'
+
+    //Blur
+    implementation 'jp.wasabeef:glide-transformations:4.3.0'
+    implementation 'jp.co.cyberagent.android:gpuimage:2.1.0'
+
+    implementation 'com.annimon:stream:1.2.1'
+
+
+    implementation 'com.orhanobut:logger:2.2.0'
+
+    implementation 'com.etebarian:meow-bottom-navigation-java:1.2.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.61"
+
+    implementation 'com.googlecode.libphonenumber:libphonenumber:8.9.10'
+
+    implementation 'com.google.firebase:firebase-messaging:20.0.0'
+
+    //agora
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'io.agora.rtc:full-sdk:3.1.0'
+    implementation 'org.slf4j:slf4j-api:1.7.25'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.googlecode.mp4parser:isoparser:1.1.22'
+    //UCrop
+    implementation 'com.github.yalantis:ucrop:2.2.6'
+
+    implementation 'com.github.HaarigerHarald:android-youtubeExtractor:2.1.0'
+}
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'

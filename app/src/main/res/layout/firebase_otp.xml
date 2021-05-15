@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/off_white"
+    tools:context=".RegistrationScreens.Firebase_OTP">
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_alignParentTop="true"
+        android:background="#6FBD56"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/logo" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verify"
+        android:layout_margin="25dp"
+        android:id="@+id/tvVerify"
+        android:textColor="#C913B51A"
+        android:textStyle="bold"
+        android:fontFamily="@font/roboto_medium_numbers"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Verify"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="35dp"
+        android:maxLength="6"
+        android:letterSpacing="1"
+        android:layout_marginEnd="35dp"
+        android:id="@+id/edtVerify"
+        android:padding="10dp"
+        android:background="@drawable/edtback"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVerify" />
+    <TextView
+        android:id="@+id/resend_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/edtVerify"
+        android:text="@string/resend_code"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:id="@+id/count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="1:20 Sec left"
+        android:layout_marginEnd="15dp"
+        android:textColor="@color/theme_green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtVerify" />
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/otp_authentication"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="@string/code_sent_to"
+            android:textSize="17sp"/>
+
+        <TextView
+            android:id="@+id/user_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="+92 3051234567"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="17sp"/>
+
+        <com.chaos.view.PinView
+            android:id="@+id/firstPinView"
+            style="@style/PinWidget.PinView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:cursorVisible="true"
+            android:inputType="number"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:cursorColor="@color/black"
+            app:cursorWidth="2dp"
+            app:itemCount="6"
+            app:itemHeight="40dp"
+            app:itemWidth="40dp"
+            app:itemSpacing="5dp"
+            app:itemRadius="5dp"
+            app:lineColor="@color/theme_green"
+            app:lineWidth="2dp"
+            app:viewType="rectangle" />
+
+        <TextView
+            android:id="@+id/resend_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:text="@string/resend_code"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:id="@+id/count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1:20 Sec left"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/theme_green" />
+
+    </LinearLayout>-->
+
+
+    <Button
+        android:id="@+id/btnVerify"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/agree"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btnnext"
+        android:text="@string/verify"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/agree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tnc"
+        android:layout_centerHorizontal="true"
+        android:text="@string/by_sign_in"
+        android:textColor="@color/black"
+        android:layout_margin="10dp"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnVerify"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tnc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+
+        app:layout_constraintBottom_toTopOf="@+id/agree"
+        android:text="@string/terms_condition"
+        android:textColor="@color/theme_green"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="624dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

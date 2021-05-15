@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.pefgloble.pefchate">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.network"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.portrait"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="false"
+        android:smallScreens="true" />
+
+    <application
+        android:name=".AgoraVideo.openvcall.AGApplication"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PEFChat"
+        android:usesCleartextTraffic="true">
+
+        <activity android:name=".activities.stories.CreateStoriesText" />
+        <activity android:name=".activities.VideoChatActivity" />
+        <activity android:name=".RegistrationScreens.RegistrationScreen" />
+        <activity android:name=".RegistrationScreens.Firebase_OTP" />
+        <activity android:name=".RegistrationScreens.Sign_In_Number" />
+        <activity android:name=".RegistrationScreens.SignIn_Methods" />
+        <activity android:name=".HomeScreens.HomeScreen" />
+        <activity android:name=".MessageBlock.MessagesActivity"
+            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize|locale"
+            android:parentActivityName=".HomeScreens.HomeScreen"
+            android:windowSoftInputMode="stateUnchanged">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeScreens.HomeScreen" />
+        </activity>
+        <activity android:name=".activities.TransferMessageContactsActivity"/>
+        <activity android:name=".activities.media.ImageEditActivity"/>
+        <activity android:name=".activities.group.CreateGroupActivity" />
+        <activity android:name=".activities.LocationActivity" />
+        <activity android:name=".activities.settings.EditUsernameActivity"/>
+        <activity android:name=".activities.media.VideoPlayerActivity"/>
+        <activity android:name=".activities.media.ImagePreviewActivity"/>
+        <activity android:name=".activities.stories.StoriesListActivity"/>
+        <activity android:name=".activities.media.PickerActivity"/>
+        <activity android:name=".activities.stories.StoriesReplyActivity"/>
+        <activity android:name=".activities.stories.StoriesSeenListActivity"/>
+        <activity android:name=".activities.call.IncomingCallScreen"/>
+        <activity android:name=".activities.call.VideoCallView"/>
+        <activity android:name=".activities.call.AudioCallView"/>
+        <activity android:name=".activities.NewConversationContactsActivity"
+            android:configChanges="locale"
+            android:label="@string/title_select_contacts"/>
+        <activity android:name=".activities.group.AddMembersToGroupActivity"/>
+        <activity android:name=".activities.ProfilePreviewActivity"/>
+        <activity android:name=".activities.media.TempActivity"/>
+        <activity android:name="com.yalantis.ucrop.UCropActivity"/>
+        <activity android:name=".activities.ProfileActivity"/>
+        <activity android:name=".staus.StatusActivity"/>
+        <activity android:name=".staus.StatusDelete"/>
+        <activity android:name=".staus.EditStatusActivity"/>
+        <activity android:name=".activities.media.MediaActivity"/>
+        <activity android:name=".activities.group.AddNewMembersToGroupActivity"/>
+        <activity android:name=".activities.media.VideoEditorActivity"/>
+
+        <activity
+            android:name=".AgoraVideo.openvcall.ui.NetworkTestActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/label_network_testing"
+            android:parentActivityName=".AgoraVideo.openvcall.ui.MainActivity" />
+        <activity
+            android:name=".AgoraVideo.openvcall.ui.CallActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:parentActivityName=".AgoraVideo.openvcall.ui.MainActivity"
+            android:theme="@style/VideoCallTheme" />
+        <activity
+            android:name=".AgoraVideo.openvcall.ui.CallOptionsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/label_options"
+            android:parentActivityName=".AgoraVideo.openvcall.ui.CallActivity" />
+        <activity
+            android:name=".AgoraVideo.openvcall.ui.SettingsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/label_settings"
+            android:parentActivityName=".AgoraVideo.openvcall.ui.MainActivity" />
+
+        <activity
+            android:name=".AgoraVideo.openvcall.ui.MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"/>
+
+        <activity android:name=".activities.stories.StoriesDetailsActivity"/>
+        <activity android:name=".RegistrationScreens.SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".HomeScreens.TestScreen" />
+
+        <service
+            android:name=".jobs.SendSingleMessageToServerWorker"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            tools:node="replace" />
+
+        <service
+            android:name=".jobs.SendSingleStoryToServerWorker"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            tools:node="replace" />
+
+        <service
+            android:name=".jobs.GcmTopicSubscribe"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            tools:node="replace" />
+
+        <receiver android:name=".recievers.MessagesReceiverBroadcast">
+            <intent-filter android:priority="99999">
+                <action android:name="new_user_notification_whatsclone" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".recievers.BootCompleteReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+
+        <service android:name=".recievers.GcmServiceListener"
+            android:exported="false"
+            android:stopWithTask="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+
+        <receiver
+            android:name=".recievers.FirebaseBackgroundService"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.pefgloble.pefchate.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="nokey" />
+        <meta-data
+            android:name="com.facebook.accountkit.ClientToken"
+            android:value="noclient" />
+        <meta-data
+            android:name="com.facebook.accountkit.ApplicationName"
+            android:value="@string/app_name" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
+
+</manifest>

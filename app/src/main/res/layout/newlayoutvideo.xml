@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/transparent"
+android:visibility="visible">
+
+<com.airbnb.lottie.LottieAnimationView
+    android:id="@+id/animation_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:visibility="visible"
+    app:lottie_autoPlay="true"
+    app:lottie_loop="true"
+    app:lottie_rawRes="@raw/loading" />
+
+<androidx.appcompat.widget.AppCompatImageView
+    android:id="@+id/imageView1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_marginLeft="15dp"
+    android:layout_marginTop="19dp"
+    app:srcCompat="@drawable/ic_videocam_white_24dp" />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="2dp"
+    android:layout_marginTop="18dp"
+    android:layout_toRightOf="@+id/imageView1"
+    android:text="@string/video_call"
+    android:textColor="#fff"
+    android:textIsSelectable="false"
+    android:textSize="16sp" />
+
+   <androidx.appcompat.widget.Toolbar
+       android:id="@+id/bottom_bar"
+       android:layout_width="match_parent"
+       android:layout_height="?attr/actionBarSize"
+       android:layout_alignParentBottom="true"
+       android:background="@color/colorPrimary">
+
+       <Chronometer
+           android:id="@+id/chrono"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:visibility="gone" />
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+
+           <androidx.appcompat.widget.AppCompatImageView
+               android:id="@+id/camera"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_centerVertical="true"
+               android:onClick="onFilterClicked"
+               android:layout_marginLeft="30dp"
+               android:background="?attr/selectableItemBackgroundBorderless"
+               android:padding="10dp"
+               app:srcCompat="@drawable/btn_filter_off" />
+
+           <androidx.appcompat.widget.AppCompatImageView
+               android:id="@+id/mute"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignParentRight="true"
+               android:layout_centerVertical="true"
+               android:onClick="onVideoMuteClicked"
+               android:layout_marginRight="30dp"
+               android:background="?attr/selectableItemBackgroundBorderless"
+               android:padding="10dp"
+               app:srcCompat="@drawable/ic_videocam_white_24dp" />
+       </RelativeLayout>
+   </androidx.appcompat.widget.Toolbar>
+
+   <androidx.appcompat.widget.AppCompatImageView
+       android:id="@+id/cancelCall"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_above="@+id/bottom_bar"
+       android:layout_centerHorizontal="true"
+       android:onClick="onHangupClicked"
+       android:layout_marginBottom="15dp"
+       android:background="?attr/selectableItemBackgroundBorderless"
+       android:padding="16dp"
+       app:srcCompat="@drawable/btn_hangup" />
+
+
+<FrameLayout
+    android:id="@+id/userImageLyout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/imageView1"
+    android:layout_margin="6dp">
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:visibility="visible"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/audio" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/userImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="16dp"
+        android:src="@drawable/bg_circle_image_holder" />
+</FrameLayout>
+
+<TextView
+    android:id="@+id/callerName"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/imageView1"
+    android:layout_margin="16dp"
+    android:layout_toRightOf="@id/userImageLyout"
+    android:text="@string/app_name"
+    android:textColor="#fff"
+    android:textSize="26sp" />
+
+<TextView
+    android:id="@+id/stopWatch"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/callerName"
+    android:layout_alignParentLeft="true"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="5dp"
+    android:paddingBottom="10dp"
+    android:text="@string/connecting"
+    android:textColor="#fff"
+    android:textSize="16dp" />
+</RelativeLayout>

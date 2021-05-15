@@ -1,0 +1,3 @@
+include ':agoraa'
+include ':app'
+rootProject.name = "PEFChat"

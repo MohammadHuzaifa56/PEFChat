@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_item_rect_ripple"
+    android:clickable="true"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingTop="6dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="6dp">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/image_profile_margin">
+
+
+            <com.pefgloble.pefchate.ui.StoryView
+                android:id="@+id/user_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:pendingIndicatorColor="@color/pendingIndicatorColor"
+                app:spaceBetweenImageAndIndicator="0.5dp"
+                app:storyItemIndicatorWidth="1dp"
+                app:visitedIndicatorColor="@color/visitedIndicatorColor" />
+
+            <FrameLayout
+                android:id="@+id/empty_story_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/user_image_profile"
+                    android:layout_width="@dimen/image_profile_width"
+                    android:layout_height="@dimen/image_profile_height"
+                    android:layout_gravity="center" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="bottom|end"
+                    android:background="@drawable/bg_circle_counter"
+                    android:padding="2dp"
+                    app:srcCompat="@drawable/ic_add_white_24dp" />
+            </FrameLayout>
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="6dp">
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="My Status"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.pefgloble.pefchate.ui.RelativeTimeTextView
+                    android:id="@+id/story_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:gravity="start|center"
+                    android:textColor="@color/colorMessageText"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/story_status"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="bottom|start"
+                    android:padding="2dp"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_error_black_24dp" />
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/my_stories"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:gravity="center"
+            android:padding="16dp"
+            app:srcCompat="@drawable/ic_more_horiz_24dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/view_margin_left"
+        android:layout_marginRight="@dimen/view_margin_right"
+        android:background="@color/colorGray" />
+</LinearLayout>
